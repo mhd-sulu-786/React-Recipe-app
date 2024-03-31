@@ -78,7 +78,7 @@ export default function Navbar({ handleCategoryClick ,search}) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar sx={{ justifyContent: 'space-around' }}>
+        <Toolbar sx={isSmallDevice ? { justifyContent: 'space-between' } : { justifyContent: 'space-around' }}>
         
           <Typography
             variant="h6"

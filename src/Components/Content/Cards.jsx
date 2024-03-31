@@ -50,7 +50,7 @@ export default function Cards({ idMeal, strMeal, strCategory, strMealThumb,strYo
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}  style={{margin:isSmallDevice?'0':'17px'}}>
+    <Card sx={{ maxWidth: 345 }}  style={{margin:isSmallDevice?'12px':'17px'}}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: getRandomColor }} aria-label="recipe">
