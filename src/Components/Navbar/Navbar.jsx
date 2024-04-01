@@ -56,13 +56,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Navbar({ handleCategoryClick ,search}) {
+export default function Navbar({ handleCategoryClick, search }) {
   const [anchorEl, setAnchorEl] = React.useState(null); // Define anchorEl state
   const isSmallDevice = useMediaQuery('(max-width:600px)');
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const [val,setval]=React.useState('');
+  const [val, setval] = React.useState('');
 
   const handleMenuClose = () => {
     setAnchorEl(null);
@@ -79,16 +79,16 @@ export default function Navbar({ handleCategoryClick ,search}) {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar sx={isSmallDevice ? { justifyContent: 'space-between' } : { justifyContent: 'space-around' }}>
-        
+
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
-          ><img className='logo-rotate' src={logo} style={{width:'8%'}}  alt="" />
-          <img src={applogo} alt="" height={100} style={{width:'30%',marginBottom:'-7px'}} />
+          ><img className='logo-rotate' src={logo} style={{ width: '8%' }} alt="" />
+            <img src={applogo} alt="" height={100} style={{ width: '30%', marginBottom: '-7px' }} />
           </Typography>
-       
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -97,13 +97,14 @@ export default function Navbar({ handleCategoryClick ,search}) {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
               value={val}
-              onChange={e=>{setval(e.target.value)}}
+              onChange={e => { setval(e.target.value) }}
               onKeyPress={(e) => {
                 if (e.key === 'Enter') {
                   e.preventDefault();
                   search(val.trim(''));
                   setval('')// Call your submit function here
-                }}}
+                }
+              }}
             />
           </Search>
           <div>
@@ -115,8 +116,8 @@ export default function Navbar({ handleCategoryClick ,search}) {
               sx={{ mr: 2 }}
               onClick={handleMenuOpen}
             >
-                 {isSmallDevice ?<MenuIcon/>:<h2 style={{fontFamily:'fantasy'}}>Categorys<BsCaretDown />
-</h2>}
+              {isSmallDevice ? <MenuIcon /> : <h2 style={{ fontFamily: 'fantasy' }}>Categorys<BsCaretDown />
+              </h2>}
             </IconButton>
             <Menu
               id="menu-appbar"
